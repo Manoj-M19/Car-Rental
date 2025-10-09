@@ -1,0 +1,35 @@
+{
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "workbench.editor.enablePreview": false,
+    "explorer.confirmDelete": false,
+    "workbench.editorAssociations": {
+        "*.zip": "default"
+    },
+    "cmake.configureOnOpen": true,
+    "window.menuBarVisibility": "compact",
+    "css.lint.unknownAtRules": "ignore",
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.cursorStyle": "line-thin",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "explorer.confirmDragAndDrop": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "mdb.mcp.server": "enabled",
+    "workbench.settings.applyToAllProfiles": [
+        "javascript.preferences.autoImportFileExcludePatterns",
+        "javascript.preferences.autoImportSpecifierExcludeRegexes",
+        "typescript.preferences.autoImportFileExcludePatterns"
+    ],
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "editor.dropIntoEditor.preferences": [
+        
+    ],
+    "json.schemas": [
+        {
+            "exclude":["node_modules"]
+        }
+    ]
+}

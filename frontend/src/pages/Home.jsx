@@ -1,10 +1,19 @@
-import React from 'react'
+
+import Hero from '../components/Hero'
+import Featuredsection from '../components/Featuredsection'
+import Banner from '../components/Banner'
+import Testimonial from '../components/Testimonial'
+import NewsLetter from '../components/NewsLetter'
 
 function Home() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Hero/>
+      <Featuredsection/>
+      <Banner />
+      <Testimonial />
+      <NewsLetter />
+    </>
   )
 }
 
