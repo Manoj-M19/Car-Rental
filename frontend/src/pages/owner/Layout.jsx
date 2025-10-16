@@ -1,11 +1,16 @@
-import React from 'react'
+import NavbarOwner from '../../components/owner/NavbarOwner'
 
-function Layout() {
+
+const Layout = () => {
   return (
-    <div>
-      
+    <div className='flex flex-col'>
+      <NavbarOwner />
+      <div className='flex'></div>
+      <Sidebar />
+      <Outlet />
     </div>
   )
 }
 
 export default Layout
+
