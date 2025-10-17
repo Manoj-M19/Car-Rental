@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { assets, dummyUserData, ownerMenuLinks } from '../../assets/assets'
 import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 
