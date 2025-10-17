@@ -1,5 +1,6 @@
 import NavbarOwner from '../../components/owner/NavbarOwner'
-
+import Sidebar from '../../components/owner/Sidebar'
+import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
