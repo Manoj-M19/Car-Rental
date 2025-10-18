@@ -3,6 +3,9 @@ import { assets, dummyDashboardData } from "../../assets/assets";
 import Title from "../../components/Title";
 
 const Dashboard = () => {
+
+  const currency = import.meta.env.VITE_CURRENCY
+
   const [data, setData] = useState({
     totalCars: 0,
     totalBookings: 0,
@@ -16,7 +19,7 @@ const Dashboard = () => {
     { title: "Total Cars", value: data.totalCars, icon: assets.carIconColored },
     { title: "Total Bookings", value: data.totalBookings, icon: assets.listIconColored },
     { title: "Pending", value: data.pendingBooking, icon: assets.cautionIconColored },
-    { title: "Confirmed", value: data.totalCars, icon: assets.listIconColored },
+    { title: "Confirmed", value: data.completedBookings, icon: assets.listIconColored },
   ];
 
   useEffect(() => {
@@ -24,6 +27,8 @@ const Dashboard = () => {
   }, []);
 
   return <div className="px-4 pt-10 md:px-10 flex-1">
+    <h1 className="text-red-500 text-2xl">Test Dashboard Text</h1>
+
    <Title  title="Admin Dashboard" subTitle="Monitor overall platform performance including total cars, bookings, revenue,and recent activities"/>
 
    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8 max-w-3xl">
@@ -57,8 +62,14 @@ const Dashboard = () => {
           </div>
 
         </div>
+        <div className="flex items-center gap-2 font-medium">
+         <p className="flex-sm text-gray-500">{currency} {booking.price}</p>
+         <p className="px-3 py-0.5 border border-borderColor rounded-full text-sm"> {booking.status}</p>
+         
+        </div>
 
         </div>
+        
       ))}
       <div>
 
@@ -66,6 +77,8 @@ const Dashboard = () => {
     </div>
    </div>
   </div>;
+  
 };
+console.log("Dasghboard")
 
 export default Dashboard;
