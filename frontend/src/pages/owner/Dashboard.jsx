@@ -27,7 +27,7 @@ const Dashboard = () => {
   }, []);
 
   return <div className="px-4 pt-10 md:px-10 flex-1">
-    <h1 className="text-red-500 text-2xl">Test Dashboard Text</h1>
+
 
    <Title  title="Admin Dashboard" subTitle="Monitor overall platform performance including total cars, bookings, revenue,and recent activities"/>
 
@@ -71,7 +71,10 @@ const Dashboard = () => {
         </div>
         
       ))}
-      <div>
+      <div className="p-4 md:p-6 mb:-6 border-borderColor rounded-md w-full md:max-w-xs">
+        <h1 className="text-lg font-medium"> Monthly Revenue </h1>
+        <p className="text-gray-500"> Revenue for current month</p>
+        <p className="text-3xl mt-6 font-semibold text-primary"> {currency} {data.monthlyRevenue}</p>
 
       </div>
     </div>
