@@ -82,6 +82,6 @@ const Dashboard = () => {
   </div>;
   
 };
-console.log("Dasghboard")
+
 
 export default Dashboard;
