@@ -1,6 +1,8 @@
 import { assets, dummyCarData } from "../assets/assets";
+import CarCard from "../components/CarCard";
 import Title from "../components/Title";
 import { useState } from "react";
+
 
 const Cars = () => {
 
