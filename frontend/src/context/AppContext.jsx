@@ -1,4 +1,4 @@
-import {  createContext, use, useEffect, useState } from "react";
+import {  createContext, useContext, useEffect, useState } from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -56,6 +56,7 @@ export const AppProvider = ({ children}) => {
     useEffect(()=> {
         const token = localStorage.getItem('token')
         setToken(token)
+        fecthCars()
     },[])
 
     useEffect(()=> {
@@ -67,11 +68,16 @@ export const AppProvider = ({ children}) => {
 
     const value = {
           navigate,currency,axios,user,setUser,
-          token,setToken,isOwner,setIsOwner,
+          token,setToken,isOwner,setIsOwner,fecthCars,fecthUser,showLogin,setShowLogin,logout,cars,setCars,
+          pickupDate,setPickupDate,returnDate,setReturnDate
     }
     return (
         <AppContext.Provider value={value}>
             {children}
         </AppContext.Provider>
     )
+}
+
+export const useAppContext = ()=> {
+    return useAppContext(AppContext)
 }
