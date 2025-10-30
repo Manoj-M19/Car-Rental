@@ -4,7 +4,7 @@ import { data, Link,useLocation,useNavigate } from 'react-router-dom'
 import {useAppContext} from '../context/AppContext'
 import toast from 'react-hot-toast';
 
-const Navbar = ({setShowLogin}) => {
+const Navbar = () => {
 
     const {setShowLogin,user,logout,isOwner,axios,setIsOwner} = useAppContext()
 
