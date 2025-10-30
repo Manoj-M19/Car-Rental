@@ -79,5 +79,5 @@ export const AppProvider = ({ children}) => {
 }
 
 export const useAppContext = ()=> {
-    return useAppContext(AppContext)
+    return useContext(AppContext)
 }
