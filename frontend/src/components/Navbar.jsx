@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { assets,menuLinks } from '../assets/assets';
-import { data, Link,useLocation,useNavigate } from 'react-router-dom'
+import {  Link,useLocation,useNavigate } from 'react-router-dom'
 import {useAppContext} from '../context/AppContext'
 import toast from 'react-hot-toast';
 
@@ -14,7 +14,8 @@ const Navbar = () => {
 
     const changeRole = async () => {
         try {
-            const {data} = await axios.post('/api/owner/change-role')
+            const {data} = await axios.post('http://localhost:3000/api/owner/change-role');
+
             if(data.success) {
                 setIsOwner(true)
                 toast.success(data.message)
