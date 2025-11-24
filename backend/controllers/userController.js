@@ -12,7 +12,7 @@ const generateToken = (userId) => {
 
 export const registerUser = async (req, res) => {
     try {
-        const { name, email, password } = req.body
+        const { name, email, password } = req.body;
 
         if (!name || !email || !password || password.length < 8) {
             return res.json({ success: false, message: 'Fill all the fields' })
@@ -27,6 +27,7 @@ export const registerUser = async (req, res) => {
         const user = await User.create({ name, email, password: hashedPassword })
         const token = generateToken(user._id.toString())
         res.json({ success: true, token })
+        
 
     } catch (error) {
         console.log(error.message);
@@ -36,7 +37,7 @@ export const registerUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     try {
-        const { eamil, password } = req.body;
+        const { email, password } = req.body;
         const user = await User.findOne({ email })
         if (!user) {
             return res.json({ success: false, message: "User not found" })
