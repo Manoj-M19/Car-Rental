@@ -1,17 +1,25 @@
 
 import { assets, cityList } from '../assets/assets'
 import { useState } from "react";
+import { useAppContext } from '../context/AppContext';
 
 function Hero() {
 
   const [pickupLocation, setPickupLocation] = useState('')
+  const {pickupDate,setPickupDate,returnDate,setReturnDate} = useAppContext()
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    navigate('/cars?pickupLocation=' +pickupLocation +'&pickupDate=' + pickupDate +'&returnDate=' + returnDate)
+  }
+
   return (
     <div className='h-screen flex flex-col items-center justify-center gap-14
     bg-light text-center'>
 
       <h1 className='text-4xl md:text-5xl font-semibold'> Luxury Cars on Rent</h1>
 
-      <form className='flex felx-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg
+      <form onSubmit = {handleSearch} className='flex felx-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg
         md:rounded-full w-full max-w-180 md:mask-x-to-yellow-200
         bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)]'>
 
@@ -30,13 +38,13 @@ function Hero() {
 
           <div className='flex flex-col items-start gap-2'>
             <label htmlFor='pickup-date'>Pick-up Date</label>
-            <input type="date" id='pickup-date' min={new Date().toISOString().
+            <input value={pickupDate} onchange={e=>setPickupDate(e.target.value)} type="date" id='pickup-date' min={new Date().toISOString().
               split('T')[0]} className='text-sm text-gray-500' required />
           </div>
 
           <div className='flex flex-col items-start gap-2'>
             <label htmlFor='return-date'>Return Date</label>
-            <input type="date" id='return-date' className='text-sm text-gray-500' required />
+            <input value={returnDate} onchange={e=>setReturnDate(e.target.value)} type="date" id='return-date' className='text-sm text-gray-500' required />
           </div>
 
         </div>
